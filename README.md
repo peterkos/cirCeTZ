@@ -4,14 +4,15 @@ A revived fork of [cirCetZ]()port of [`circuitikz`](https://github.com/circuitik
 
 ## Installation
 
-1) Throw it in a directory called `cirCetZ`
-2) Import `fletcher` and `cetz` alongside this package in the destination `.typst` file
+1) Clone the repo into a directory called `cirCetZ`
+2) Import `fletcher` and `cetz` alongside this package
 
-_Note: this can definitely be cleaned up! Feel free to open a PR :)_
+_Note: this process can definitely be cleaned up! Feel free to open a PR :)_
 
 ```typst
 #import "@preview/fletcher:0.5.3" as fletcher: diagram, node, edge, cetz
-#import "circetz/src/lib.typ" as circetz: *
+#import "cirCetZ/src/lib.typ" as circetz: *
+#import cetz.draw
 
 #cetz.canvas({
   import components: *
@@ -20,6 +21,8 @@ _Note: this can definitely be cleaned up! Feel free to open a PR :)_
   resistor((0, 0), (2, 0), i: ("<", $i_1$))
 })
 ```
+
+See `demo.typ` for an out-of-the-box demo.
 
 Also see `examples/` for examples with a surprise compilation status. Will it compile? Who knows! I didn't get that far yet.
 

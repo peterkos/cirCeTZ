@@ -1,31 +1,27 @@
-# circuitypst
-# THERES WORK ON THE DEV BRANCH THIS PROJECT ISN'T DEAD
-A port of [`circuitikz`](https://github.com/circuitikz/circuitikz) to Typst using [`typst-canvas`](https://github.com/johannes-wolf/typst-canvas). Due to the size of `circuitikz` features will be ported as I need them for my own work, if theres a feature you need feel free to make an issue, PR or contact me through Typst's discord (same username)!
+# cirCetZ
 
-![](assets/current%20shunt.png)
+A revived fork of [cirCetZ]()port of [`circuitikz`](https://github.com/circuitikz/circuitikz) to Typst using [`CetZ`](https://github.com/cetz-package/cetz).
 
-## "Installation"
-Because of Typst's current lack of package management the library expects to be placed in the same folder as `typst-canvas`.
-```
-typst-canvas/
-circuitypst/
-```
-You can either clone the repository or download it as a `.zip` and extract it to the required location.
+## Installation
 
-## Usage
-To get started `node` and `to` should be imported from `circuitypst.typ`, ideally inside `typst-canvas`'s `canvas` function.
+1) Throw it in a directory called `cirCetZ`
+2) Import `fletcher` and `cetz` alongside this package in the destination `.typst` file
 
-Here is a template:
-```typ
-#import "typst-canvas/canvas.typ": canvas
+_Note: this can definitely be cleaned up! Feel free to open a PR :)_
 
-#canvas(length: 1cm, debug: false, {
-  import "typst-canvas/draw.typ": *
-  import "circuitypst/circuitypst.typ": node, to
-  ...
+```typst
+#import "@preview/fletcher:0.5.3" as fletcher: diagram, node, edge, cetz
+#import "circetz/src/lib.typ" as circetz: *
+
+#cetz.canvas({
+  import components: *
+  import draw: *
+  resistor((2, 1), (0, 1), i: ("<", $i_1$))
+  resistor((0, 0), (2, 0), i: ("<", $i_1$))
 })
 ```
-Also see `examples/` for some examples. 
+
+Also see `examples/` for examples with a surprise compilation status. Will it compile? Who knows! I didn't get that far yet.
 
 ## Requirements for First Stable Release
 - [ ] Reference manual (doesn't have to inclued tutorials, just a list of currently supported components)

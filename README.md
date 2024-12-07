@@ -1,6 +1,6 @@
 # cirCetZ
 
-A revived fork of [cirCetZ]()port of [`circuitikz`](https://github.com/circuitikz/circuitikz) to Typst using [`CetZ`](https://github.com/cetz-package/cetz).
+A revived fork of [cirCetZ](https://github.com/fenjalien/cirCeTZ), which is a port of [`circuitikz`](https://github.com/circuitikz/circuitikz) to Typst with [`CetZ`](https://github.com/cetz-package/cetz).
 
 ## Installation
 
